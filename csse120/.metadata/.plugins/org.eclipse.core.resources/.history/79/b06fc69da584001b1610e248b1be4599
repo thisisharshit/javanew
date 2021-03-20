@@ -1,0 +1,25 @@
+package HelloWorld;
+
+
+public class car {
+	
+	private int doors;
+	private int wheels;
+	private String model;
+	private String engine,colour;
+	
+	public void setmodel(String model) {
+		String validmodelString =model.toLowerCase();
+		if(validmodelString==("porshe") || validmodelString.equals("holden")) {
+			this.model=model;
+		}else {
+			this.model="unknown";
+		}
+	}
+	public String getmodel() {
+		return this.model;
+	}
+	
+	
+
+}

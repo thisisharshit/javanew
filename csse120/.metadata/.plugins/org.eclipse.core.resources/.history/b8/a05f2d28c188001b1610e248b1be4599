@@ -1,0 +1,18 @@
+
+public class Deskphone implements Itelephone {
+	private int mynumber;
+	private boolean isringing;
+	
+	@Override
+	public void call() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isringing() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+}

@@ -1,0 +1,149 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ex1 {
+	private static Scanner scan =  new Scanner(System.in);
+	private static Mobilephone mobilephone = new Mobilephone("75972893921");
+	public static void main(String[] args) {
+		boolean quit = false;
+		startphone();
+		while(!quit) {
+			int action  = scan.nextInt();
+			scan.nextLine();
+			switch (action) {
+			case 0:
+				System.out.println("shutting down...");
+				quit=true;
+				break;
+			case 1:
+				mobilephone.printcontacts();
+				break;
+			case 2:
+				addcontact();
+				break;
+			case 3:
+				//updatecontact();
+				break;
+			case 4:
+				//removecontact();
+				break;
+			case 5:
+				//query();
+				break;
+			default:
+				printactions();
+				break;
+			}
+		}
+	}
+	private static void startphone() {
+		System.out.println("starting phone....");
+	}
+	private static void printactions() {
+		System.out.println("available actions...\nPress");
+		System.out.println("0 - to shutdown\n"+
+		"1 - to print contacts\n"+"2 - to add new contact\n"+"3 - to update existing contact\n"+"4 - to remove existing contact\n"+
+				"5 - query a contact\n"+"6 - to print list of available actions");
+		System.out.println("choose your action: ");
+	}
+	private static void addcontact() {
+		System.out.println("enter new contact name: ");
+		String name  =  scan.nextLine();
+		System.out.println("enter phone num: ");
+		String num = scan.nextLine();
+		Contacts newcontact =   new Contacts(name, num);
+		if(mobilephone.addnew(newcontact)) {
+			System.out.println("new contact added");
+		}else {
+			System.out.println("cant add new contact, already present");
+		}
+	}
+}
+class Contacts{
+	private String name;
+	private String num;
+	public Contacts(String name, String num) {
+		this.name = name;
+		this.num = num;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getNum() {
+		return num;
+	}
+	public void setNum(String num) {
+		this.num = num;
+	}
+	
+}
+class Mobilephone{
+	private String  mynumber;
+	private ArrayList<Contacts> mycontacts;
+	
+	
+	public Mobilephone(String mynumber) {
+		this.mynumber = mynumber;
+		this.mycontacts = new ArrayList<Contacts>();
+	}
+	public void printcontacts() {
+		for(int i=0;i<mycontacts.size();i++) {
+			System.out.println(mycontacts.get(i).getName()+" --- "+mycontacts.get(i).getNum());
+		}
+	}
+	public boolean addnew(Contacts contact) {
+		if(findcontact(contact)>=0) {
+			System.out.println("already present");
+			return false;
+		}
+		mycontacts.add(contact);
+		return true;
+	}
+	
+	
+	private int findcontact(Contacts contact) {
+		return mycontacts.indexOf(contact);
+	}
+	private int findcontact(String name) {
+		for(int i=0;i<mycontacts.size();i++) {
+			Contacts contact = mycontacts.get(i);
+			if(contact.getName().equals(name)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+	public String query(Contacts contact) {
+		if(findcontact(contact)>=0) {
+			return contact.getName();
+		}
+		return null;
+	}
+	public boolean remove(Contacts contact) {
+		int pos = findcontact(contact);
+		if(pos<0) {
+			System.out.println("not found");
+			return false;
+		}
+		else {
+			mycontacts.remove(pos);
+			System.out.println(contact.getName()+" was deleted");
+			return true;
+		}
+	}
+	public void update(Contacts oldcontact, Contacts newcontact) {
+		int pos = findcontact(oldcontact);
+		if(pos<0) {
+			System.out.println("not found");
+		}
+		else {
+			mycontacts.set(pos, newcontact);
+			System.out.println("old contact was replaced with new contact");
+		}
+			
+	}
+		
+}

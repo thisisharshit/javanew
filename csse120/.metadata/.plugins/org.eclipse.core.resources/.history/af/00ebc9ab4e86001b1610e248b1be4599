@@ -1,0 +1,18 @@
+import java.util.Scanner;;
+
+public class array {
+	public static void main(String args[]) {
+		int []arr = new int[10];
+		Scanner s  =new Scanner(System.in);
+		int n = s.nextInt();
+		for(int i=0;i<n;i++) {
+			arr[i] = s.nextInt();
+		}
+		s.close();
+		for(int i=0;i<n;i++) {
+			System.out.println(arr[i]*9);
+		}
+		String ar="har";
+		System.out.println(ar.length());
+	}
+}

@@ -1,0 +1,12 @@
+package HelloWorld;
+
+import java.util.Scanner;
+public class readinguserinput {
+	public static void main(String args[]) {
+		Scanner scanner = new Scanner(System.in);
+		String nameString  =scanner.nextLine();
+		System.out.println("enter your name: ");
+		scanner.close();
+		System.out.println("your name is: "+nameString);
+	}
+}

@@ -1,0 +1,20 @@
+package HelloWorld;
+
+
+public class car {
+	
+	private int doors;
+	private int wheels;
+	private String model;
+	private String engine,colour;
+	
+	public void setmodel(String model) {
+		this.model=model;
+	}
+	public void getmodel() {
+		System.out.println(model);
+	}
+	
+	
+
+}

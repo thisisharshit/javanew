@@ -1,0 +1,17 @@
+package HelloWorld;
+public class Hello {
+	public static void main(String args[]) {
+		System.out.println("Hello, Harshit");
+		int a=9;
+		//System.out.println(a);
+		int max=Integer.MAX_VALUE;
+		int min=Integer.MIN_VALUE;System.out.println("MIN value "+(min));
+		int m=1123;
+		System.out.println(m);
+		byte maxbyte=Byte.MAX_VALUE;
+		System.out.println(maxbyte);
+		short maxshort=Short.MAX_VALUE;
+		System.out.println(maxshort);
+		
+	}
+}

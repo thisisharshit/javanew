@@ -1,0 +1,10 @@
+package HelloWorld;
+
+public class Main {
+	public static void main(String args[]) {
+		car porshe = new car();
+		car holden = new car();
+		porshe.setmodel("carrera");
+		porshe.getmodel();
+	}
+}

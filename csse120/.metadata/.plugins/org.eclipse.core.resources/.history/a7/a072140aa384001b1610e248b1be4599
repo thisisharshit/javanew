@@ -1,0 +1,13 @@
+package HelloWorld;
+
+
+public class car {
+	
+	private int doors;
+	private int wheels;
+	private String modelString;
+	private String engine,colour;
+	
+	
+
+}
