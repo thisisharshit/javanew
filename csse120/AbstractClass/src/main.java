@@ -15,7 +15,7 @@ public class main {
 		parrot.fly();
 		Penguin penguin=new Penguin("emperor");
 		penguin.fly();
-		
+	
 		
 	}
 }
