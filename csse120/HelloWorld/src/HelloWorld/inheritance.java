@@ -7,6 +7,9 @@ public class inheritance {
 		animal animal = new animal("animal", 1, 1, 5,5);
 		dog dog = new dog("yorkie", 8, 20, 2, 4, 1, 20, "silky");
 		dog.move(3);
+		animal animal1 = new dog(null, 0, 0, 0, 0, 0, 0, null);
+		animal.move(10);
+		animal1.move(10);
 		//fish fish  = new fish(name, size, weight, gills, eyes, fins)
 	}
 }

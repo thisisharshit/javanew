@@ -1,2 +1,2 @@
-module HelloWorld {
+module JavaFX {
 }
