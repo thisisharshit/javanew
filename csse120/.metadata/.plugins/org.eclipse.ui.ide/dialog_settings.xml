@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\EclipseWorkspaces\csse120\Paths\Examples\Dir4"/>
+		<item value="C:\EclipseWorkspaces\csse120\Paths\Examples"/>
 		<item value="C:\Users\harshit\eclipse-workspace"/>
 	</list>
 	<section name="NewWizardAction">
