@@ -14,6 +14,7 @@ import org.apache.http.impl.client.HttpClients;
 public class ApacheTest {
 	public static void main(String[] args) {
 		CloseableHttpClient httpClient =  HttpClients.createDefault();
+		
 		HttpGet request = new HttpGet("http://example.org");
 		request.addHeader("User-Agent","Chrome");
 		CloseableHttpResponse response = null;
@@ -26,7 +27,7 @@ public class ApacheTest {
 				System.out.println(line);
 			}
 			inputReader.close();
-		} catch (IOException e) {
+		} catch (IOException e) { 
 			System.out.println("IOException: "+e.getMessage());
 		}finally {
 			try {
