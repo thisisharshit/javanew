@@ -5,8 +5,14 @@ public class Main {
 		PolitePerson jane = new PolitePerson("jane");
 		PolitePerson john = new PolitePerson("john");
 		
+		
+		//using the same thread , so wont experience a deadlock
+//		jane.sayHello(john);
+//		john.sayHello(jane);
+		
+		System.out.println("--------------------------------");
+		
 		new Thread(new Runnable() {
-			
 			@Override
 			public void run() {
 				jane.sayHello(john);	

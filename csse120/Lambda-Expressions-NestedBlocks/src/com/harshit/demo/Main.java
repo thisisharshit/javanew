@@ -40,7 +40,14 @@ public class Main {
 		
 		for(Employee e:employees) {
 			System.out.println(e.getName());
+			System.out.println(e.getAge());
 		}
+		
+		employees.forEach(e->{ // forEach method takes a lambda expression
+			System.out.println(e.getName());
+			System.out.println(e.getAge());
+		});
+		
 		
 //		String sillyString = doStringStuff(new UpperConcat() {
 //			@Override
@@ -104,7 +111,8 @@ class AnotherClass{
 //				return result;
 //			}
 //		}, "String1", "String2");
-		
+
+
 //		UpperConcat uc=(s1,s2)->{
 //			System.out.println("The Lambda's Expression class name is "+getClass().getSimpleName());
 //			return s1.toUpperCase()+" "+s1.toUpperCase();
@@ -119,7 +127,7 @@ class AnotherClass{
 			UpperConcat uc=new UpperConcat() {
 				@Override
 				public String upperAndConcat(String s1, String s2) {
-					System.out.println("i  within anonymous class "+i); //local variable doesnt belong to anonymous class instance, thats why have to add final 
+					System.out.println("i  within anonymous class "+i); //local variable doesnt belong to anonymous class instance, thats why have to declared final 
 					return s1.toUpperCase()+" "+s1.toUpperCase();
 				}
 			};
@@ -131,5 +139,21 @@ class AnotherClass{
 			return Main.doStringStuff(uc, "String1", "String2");
 		}
 		
+	}
+	
+	
+	public void printValue() {
+		int number = 25;
+		Runnable r = ()->{
+			
+			try {
+				Thread.sleep(5000);
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+			System.out.println("The value is "+number);
+			
+		};
+		new Thread(r).start();
 	}
 }
